@@ -1,0 +1,364 @@
+@import '/fonts/Geometria/stylesheet.css';
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap';
+@import "~font-awesome/scss/font-awesome.scss";
+
+.mode .moon{display: inline-block;}
+.mode .sun{display: none;}
+path{
+    fill: #333;
+}
+.dropdown-menu{
+    min-width: 100%;
+}
+.avatar{
+    width: 80px;
+    height: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.alert-calc{
+    background-color: #f5f3f3;
+    border-color: #f5f3f3;
+    padding-left: 16px;
+    padding-right: 20px;
+    border-radius: 10px;
+    .dropdown{
+        border-radius: 8px;
+    }
+}
+.file_link img{
+    width: auto;
+    max-height: 96px;
+}
+.bread a.active{color: #333;}
+.bread a, .bread a:hover{color: rgb(139, 151, 170);}
+.bread span{font-size: 0.5em; font-weight: normal;color: rgb(139, 151, 170);}
+.dark-block{display: none;}
+.dark-none{display: inline-block;}
+.transparent, .transparent:active, .transparent:focus{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #333;
+}
+.bg1,.dark{
+    background-color: $front-color-1;
+    color: #fff;
+    td, th{ color: $light;}
+    .mode .moon{display: none;}
+    .mode .sun{display: inline-block;}
+    .fa-home, .fa-bars{color: #fff;}
+    .bread a.active{color: #fff;}
+    .modal-content{background-color: $front-color-1;}
+    path{
+        fill: #fff;
+    }
+    .card{
+        color: #333;
+    }
+    .form-control{
+        border-color: #fff;
+        color: #fff;
+    }
+    .dark-none{display: none;}
+    .dark-block{display: inline-block;}
+    .overlay{
+        background-image: url(/img/body-overlay-dark.svg);
+    }
+}
+.bg2{background-color: #ccc;}
+.custom-shadow{
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(114, 112, 112, 0.2);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(114, 112, 112, 0.2);
+    box-shadow: 0px 0px 20px 0px rgba(114, 112, 112, 0.2);
+}
+.fa-home, .fa-bars{color: #333;}
+.sidebar{
+    max-width: 250px;
+    height: 100vh;
+    &>div{ height: 100%; }
+}
+.navbar-brand{
+    padding: 1rem;
+    img{
+        max-width: 150px;
+    }
+}
+.form-control{
+    background-color: transparent!important;
+}
+.preview_img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 187px;
+}
+.dark .list-group-item{
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #394966;
+    &:hover,&.active{
+        background: #394966;
+        color: #fff;
+    }
+}
+.list-group-item{
+    background-color: transparent;
+    border: none;
+    &:hover,&.active{
+        background: #ECECEC;
+        color: #333;
+    }
+}
+.sidebar.active{
+    .list-group-item{
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        &:hover,&.active{
+            background: #394966;
+            color: #fff;
+        }
+    }
+}
+@media (max-width: 991px){
+    .sidebar{
+        width: 100%;
+        max-width: 400px;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        transition: 0.3s right;
+        z-index: 100;
+        background-color: $bg1;
+        height: 100%;
+        &.active{
+            right: 0;
+        }
+    }
+}
+.search{
+    input, .input-group-text{
+        border: none;
+        border-bottom: 1px solid #cecece;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+.bg-gray{
+    background-color: #fbfbfb;
+}
+.tradingview-widget-container{
+    position: relative;
+    &:after, &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 15%;
+        z-index: 2;
+        top: 0;
+    }
+    &:before{
+        left: 0;
+        background: linear-gradient(90deg, rgb(7,23,52, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    &:after{
+        right: 0;
+        background: linear-gradient(-90deg, rgb(7,23,52, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+.container{
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    width: 50%;
+    background-image: url(/img/body-overlay.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+    left: 0;
+    &.right{
+        left: auto;
+        right: 0;
+    }
+    &.center{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+#front{
+    transition: 0.3s all;
+    height:100vh;
+    display:flex; 
+    flex-direction:column; 
+    .form-control{
+        border-color: #333;
+        border-radius: 0.8rem;
+    }
+    .navbar-dark{
+        background-color: transparent;
+    }
+    .card-default{
+        background-color: #fff!important;
+        border: none!important;
+        color: #333!important;
+    }
+    &.dark{
+        background-image: none;
+        background-color: $front-color-1;
+        color: #fff;
+        .card{
+            background-color: $front-color-1;
+            color: #fff;
+        }
+        footer{
+            border-top: 2px solid rgba(0,238,242, 0.1);
+        }
+        .btn.btn-default{
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .link-default{
+            color: #fff;
+        }
+        .custom-shadow{
+            -webkit-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
+            -moz-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
+        }
+        .special .shadow{
+            box-shadow: none;
+            border: 1px solid $front-color-2;
+        }
+        .card-body{
+            background-color: #fff;
+            color: #333;
+        }
+    }
+    section{
+        display: block;
+        padding: 25px 0;
+        position: relative;
+        z-index: 1;
+    }
+    footer{
+        display: block;
+        background-color: $front-color-1;
+        color: #fff;
+        margin-top:auto; 
+        width: 100%;
+    }
+    label{
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+    .link-default{
+        color: #000;
+        text-decoration: underline;
+    }
+    .dots{
+        background-image: url(/img/dots.png);
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: contain;
+    }
+    .card{
+        border-radius: 1rem;
+        border: none;
+    }
+    header{
+        background-color: $front-color-1;
+        display: block;
+        position: relative;
+        padding-bottom: 50px;
+        .img{
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background-image: url(/img/header-img.png);
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: contain;
+            z-index: 0;
+        }
+        @media (max-width: 991px){
+            .img{
+                width: auto;
+                left: 30%;
+                height: 80%;
+                top: 50%;
+                transform: translateY(-50%);
+                background-position: top left;
+            }
+        }
+    }
+    .jumbotron{
+        position: relative;
+        z-index: 1;
+    }
+    .under-header{
+        background-image: url(/img/header-bg.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left bottom;
+        height: 80px;
+    }
+    .btn{
+        font-weight: 700;
+        &.btn-default{
+            border: 1px solid #333;
+        }
+        &+.btn{
+            margin-left: 10px;
+        }
+    }
+    .money-value{
+        width: 40%;
+        max-width: 200px;
+        line-height: 1;
+        .big{font-size: 32px;}
+        .small{color: #999;}
+    }
+    .money-title{
+        font-size: 0.8em;
+    }
+    .small, small{
+        font-size: 90%;
+    }
+    .block{
+        padding: 2rem;
+        &.dark{
+            background-color: $front-color-1;
+        }
+        &.has-overlay{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url(/img/block-texture.png);
+        }
+    }
+    .number{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 2px solid $primary;
+        font-size: 1.2em;
+    }
+}
